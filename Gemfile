@@ -4,7 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3', '1.3.8'
+  gem 'rspec-rails', '2.13.1'
+  gem 'factory_girl_rails'
+end
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -30,11 +35,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'haml'
 gem 'bootstrap-sass'
-
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'factory_girl_rails'
-end
 
 group :test do
   gem 'shoulda-matchers'
